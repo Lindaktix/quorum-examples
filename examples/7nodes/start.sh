@@ -21,7 +21,7 @@ function usage() {
 
 privacyImpl=tessera
 tesseraOptions=
-consensus=
+consensus="raft"
 blockPeriod=
 verbosity=3
 while (( "$#" )); do
@@ -69,7 +69,6 @@ while (( "$#" )); do
     esac
 done
 
-
 if [ "$consensus" == "" ]; then
     echo "Error: consensus not selected"
     exit 1
@@ -86,6 +85,11 @@ fi
 if [ "$consensus" == "raft" ] && [ "$blockPeriod" -lt 50 ]; then
     blockPeriod=50
 fi
+
+# Specify the path to the Tessera jar or script
+export TESSERA_JAR="/home/linda/tessera/tessera-app.jar"
+# or
+# export TESSERA_SCRIPT="/home/linda/tessera/tessera/bin/tessera"
 
 if [ "$consensus" == "clique" ]; then
     ./$consensus-start.sh $privacyImpl $tesseraOptions --verbosity $verbosity

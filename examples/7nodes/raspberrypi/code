@@ -1,0 +1,88 @@
+import paho.mqtt.client as mqtt
+import RPi.GPIO as GPIO
+import adafruit_dht
+import time
+import board
+
+# ✅ GPIO Setup for Stepper Motor
+STEP_PIN = 23  # GPIO Pin for Step
+DIR_PIN = 24   # GPIO Pin for Direction
+
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(STEP_PIN, GPIO.OUT)
+GPIO.setup(DIR_PIN, GPIO.OUT)
+
+# ✅ MQTT Configuration
+MQTT_BROKER = "localhost"
+TEMP_TOPIC = "factory/temperature"
+MOTOR_CONTROL_TOPIC = "factory/motor"
+
+# ✅ DHT22 Configuration (Using `adafruit_dht`)
+DHT_PIN = board.D4  # GPIO 4
+dht_sensor = adafruit_dht.DHT22(DHT_PIN)
+
+# ✅ Global Flag for Motor Control
+motor_running = True
+
+# ✅ MQTT Callback: When connected, subscribe to motor control topic
+def on_connect(client, userdata, flags, rc):
+    print(f"Connected to MQTT Broker with result code {rc}")
+    client.subscribe(MOTOR_CONTROL_TOPIC)
+
+# ✅ MQTT Callback: Process incoming motor control commands
+def on_message(client, userdata, msg):
+    global motor_running
+    command = msg.payload.decode()
+
+    if command == "STOP":
+        print("⚠️ Stopping Motor")
+        motor_running = False
+    elif command == "START":
+        print("✅ Starting Motor")
+        motor_running = True
+
+# ✅ Setup MQTT Client
+client = mqtt.Client()
+client.on_connect = on_connect
+client.on_message = on_message
+client.connect(MQTT_BROKER, 1883, 60)
+
+# ✅ Main Loop (Read Temperature + Control Motor)
+try:
+    while True:
+        client.loop_start()  # Continuously check MQTT messages
+        
+        try:
+            temperature = dht_sensor.temperature
+            humidity = dht_sensor.humidity
+
+            if temperature is not None:
+                print(f"🌡️ Temperature: {temperature:.1f}°C, 💧 Humidity: {humidity:.1f}%")
+                client.publish(TEMP_TOPIC, str(temperature))  # Send temp to MQTT
+
+                if temperature >= 30:  # Stop motor if temp ≥ 30°C
+                    motor_running = False
+                    client.publish(MOTOR_CONTROL_TOPIC, "STOP")
+
+            else:
+                print("⚠️ Failed to read temperature. Check wiring!")
+
+        except RuntimeError as error:
+            print(f"DHT22 Error: {error}")  # Handle sensor read errors
+
+        if motor_running:
+            GPIO.output(DIR_PIN, GPIO.HIGH)  # Motor Forward
+            GPIO.output(STEP_PIN, GPIO.HIGH)
+            time.sleep(0.002)
+            GPIO.output(STEP_PIN, GPIO.LOW)
+            time.sleep(0.002)
+        else:
+            time.sleep(1)  # If stopped, wait
+
+        time.sleep(5)  # Check temperature every 5 seconds
+
+except KeyboardInterrupt:
+    print("Shutting down...")
+    GPIO.cleanup()
+    dht_sensor.exit()
+
