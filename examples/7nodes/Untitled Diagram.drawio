@@ -1,9 +1,81 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" version="28.2.9">
   <diagram name="Page-1" id="t1ezh_KCInOUEs4aBXtC">
-    <mxGraphModel>
+    <mxGraphModel dx="2206" dy="812" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="225" y="810" width="524" height="205" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-6" value="&lt;b&gt;&lt;font style=&quot;color: rgb(255, 255, 255);&quot;&gt;Digital_io_panel.py&amp;nbsp;&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#647687;strokeColor=#314354;fontColor=#ffffff;" vertex="1" parent="1">
+          <mxGeometry x="437" y="871" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-5" value="&lt;b&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Raspberry Pi Node&lt;/font&gt;&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="412" y="818" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-7" value="&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;•&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;/niryo_one/rpi/digital_io_state : Topic&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;•&lt;/span&gt;&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;/niryo_one/rpi/get_digital_io : Service&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p data-pm-slice=&quot;1 1 []&quot;&gt;• /niryo_one/rpi/set_digital_io_mode : Service&amp;nbsp; • /niryo_one/rpi/set_digital_io_state : Service&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-36.5" y="968" width="1057" height="23" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-8" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;niryo_one_api.py&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+          <mxGeometry x="387.5" y="623" width="199" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-9" value="&lt;b&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Python Api&lt;/font&gt;&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="433.5" y="623" width="89" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-10" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;discrete_input_data_block.py /&lt;br&gt;&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;coil_data_block.py&lt;/font&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+          <mxGeometry x="-8" y="865.75" width="199" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-11" value="&lt;b&gt;Modbus Server&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="43" y="861" width="107" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-12" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;tcp_server.py&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+          <mxGeometry x="781" y="869" width="199" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-14" value="&lt;b&gt;TCP Server&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="832" y="865.75" width="79" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-15" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;tool_ros_command_interface.py&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;" vertex="1" parent="1">
+          <mxGeometry x="408" y="1084" width="199" height="83" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-16" value="&lt;b&gt;Tool Interface&lt;/b&gt;" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="465" y="1086" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-17" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" edge="1" parent="1" source="oVG5ybGdNmyZDUjux61Z-4" target="oVG5ybGdNmyZDUjux61Z-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="467" y="786" as="sourcePoint" />
+            <mxPoint x="517" y="736" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-20" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="497" y="1084" as="sourcePoint" />
+            <mxPoint x="496.5" y="1012" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-21" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.412;entryY=-0.021;entryDx=0;entryDy=0;exitX=0.997;exitY=0.398;exitDx=0;exitDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="oVG5ybGdNmyZDUjux61Z-8" target="oVG5ybGdNmyZDUjux61Z-12">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="606" y="667" as="sourcePoint" />
+            <mxPoint x="656" y="617" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-22" value="" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.008;entryY=0.349;entryDx=0;entryDy=0;exitX=0.628;exitY=0;exitDx=0;exitDy=0;entryPerimeter=0;exitPerimeter=0;" edge="1" parent="1" source="oVG5ybGdNmyZDUjux61Z-10" target="oVG5ybGdNmyZDUjux61Z-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="179" y="739" as="sourcePoint" />
+            <mxPoint x="229" y="689" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-24" value="Uses API Methods" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="739" y="710" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-25" value="Uses API Methods" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="189" y="706" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-26" value="Calls the Services and subscribes to topic" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="486" y="731" width="91" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="oVG5ybGdNmyZDUjux61Z-27" value="Calls the Services" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="499" y="1029" width="60" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
